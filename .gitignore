@@ -400,3 +400,7 @@ quiz_code
 fasit
 tut
 test
+
+**/.DS_Store
+
+git rm -rf --cached .DS_Store

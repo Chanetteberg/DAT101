@@ -40,12 +40,16 @@ const part4Hours = Math.floor(part4Rest);
 part4Rest = part4Rest - part4Hours; 
 part4Rest = part4Rest * 60;
 const part4Minute = Math.floor(part4Rest);
-
+part4Rest -= part4Minute; 
+part4Rest *= 60;
+const part4Seconds = Math.floor(part4Rest);
 
 printOut("6,322,52 minutes is " +
     part4Days + " days, " +
     part4Hours + " hours, " +
-   part4Minute + " minutes" 
+   part4Minute + " minutes," +
+   part4Seconds + " seconds" 
+
 );
 
 printOut(newLine);

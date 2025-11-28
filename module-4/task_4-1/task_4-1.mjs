@@ -130,12 +130,32 @@ printOut(newLine);
 
 printOut("--- Part 5 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
-
+myAccount.deposit(150);
 
 printOut(newLine);
 
 printOut("--- Part 6 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
+#currencyConvert(newCurrency) {
+  const amountInNOK = this.#balance / this.#currency.value;
+  const newBalance = amountInNOK * newCurrency.value;
+  this.#balance = Number(newBalance.toFixed(2));
+}
+setCurrencyType(aType) {
+  if (!aType || typeof aType !== "object") return;
+  if (this.#currency === aType) return;
+
+  const old = this.#currency;
+
+  this.#currencyConvert(aType);
+  this.#currency = aType;
+
+  printOut(`The account currency has change from ${old.name} to ${aType.name}`);
+  printOut(`New balance is ${this.#balance.toFixed(2)}${this.#currency.denomination}`);
+}
+
+
+
 
 
 printOut(newLine);
